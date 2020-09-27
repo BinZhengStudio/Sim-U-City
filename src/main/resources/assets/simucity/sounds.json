@@ -1,0 +1,16 @@
+{
+  "city_box_activated": {
+    "category": "blocks",
+    "subtitle": "sound.simucity.city_box_activated",
+    "sounds": [
+      "simucity:city_box_activated"
+    ]
+  },
+  "computer": {
+    "category": "blocks",
+    "subtitle": "sound.simucity.computer",
+    "sounds": [
+      "simucity:computer"
+    ]
+  }
+}
