@@ -4,7 +4,7 @@ public enum GameMode {
 	NOT_ASKED(-1),
 	NORMAL(0),
 	CREATIVE(1),
-	HARDCORE(2),
+	DIFFICULT(2),
 	DO_NOT_RUN(3);
 
 	private final int id;
@@ -25,7 +25,7 @@ public enum GameMode {
 		} else if (id == 1) {
 			return CREATIVE;
 		} else if (id == 2) {
-			return HARDCORE;
+			return DIFFICULT;
 		} else if (id == 3) {
 			return DO_NOT_RUN;
 		}

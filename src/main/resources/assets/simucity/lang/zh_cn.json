@@ -6,6 +6,10 @@
 
   "block.simucity.city_box": "城市建筑盒",
 
+  "button.run_mod.do_not_run": "不运行模拟大都市",
+  "button.run_mod.normal": "普通模式",
+  "button.run_mod.creative": "创造模式",
+  "button.run_mod.difficult": "困难模式",
   "button.city_box.done": "确定",
   "button.city_box.hire_builders": "雇佣建筑师",
   "button.city_box.choose_building": "选择建筑",
@@ -14,6 +18,13 @@
   "button.city_box.planning_area": "区域规划选项",
   "button.city_box.show_employees": "显示员工",
   "button.city_box.create_new_city": "创建新的城市",
+
+  "text.run_mod.title": "模拟大都市MOD-运行菜单",
+  "text.run_mod.do_not_run_description": "此存档不运行模拟大都市",
+  "text.run_mod.normal_description": "建议初学者选择此选项",
+  "text.run_mod.creative_description": "无限的金钱、无需提供方块、超快的建造速度……",
+  "text.run_mod.difficult_description": "需要提供所有方块（如钻石块），难度极大",
+  "text.city_box.city_control_panel": "城市建筑盒控制面板",
 
   "text.week.sunday": "星期日",
   "text.week.monday": "星期一",

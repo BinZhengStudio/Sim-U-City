@@ -27,8 +27,8 @@ public class WorldData implements Serializable {
 				BufferedReader reader = new BufferedReader(new FileReader(new File(worldPath, "worldstate.json")));
 				WorldData.state = gson.fromJson(reader, WorldState.class);
 				reader.close();
-
 			} catch (IOException e) {
+				WorldData.state = new WorldState();
 				e.printStackTrace();
 			}
 		}

@@ -45,9 +45,9 @@ public class RunModScreen extends Screen {
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
-		this.addButton(new Button((width / 2 - 75), 190, 150, 20, I18n.format("button.run_mod.hardcore"), (press) -> {
-			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.HARDCORE, 1))));
-			WorldData.state = new WorldState(GameMode.HARDCORE, 1);
+		this.addButton(new Button((width / 2 - 75), 190, 150, 20, I18n.format("button.run_mod.difficult"), (press) -> {
+			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.DIFFICULT, 1))));
+			WorldData.state = new WorldState(GameMode.DIFFICULT, 1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 	}
@@ -60,7 +60,7 @@ public class RunModScreen extends Screen {
 		this.drawCenteredString(this.font, I18n.format("text.run_mod.do_not_run_description"), width / 2, 60, 0xffff00);
 		this.drawCenteredString(this.font, I18n.format("text.run_mod.normal_description"), width / 2, 110, 0xffff00);
 		this.drawCenteredString(this.font, I18n.format("text.run_mod.creative_description"), width / 2, 160, 0xffff00);
-		this.drawCenteredString(this.font, I18n.format("text.run_mod.hardcore_description"), width / 2, 210, 0xffff00);
+		this.drawCenteredString(this.font, I18n.format("text.run_mod.difficult_description"), width / 2, 210, 0xffff00);
 		super.render(mouseX, mouseY, particleTick);
 	}
 

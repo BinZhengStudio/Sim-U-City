@@ -6,6 +6,10 @@
 
   "block.simucity.city_box": "City Box",
 
+  "button.run_mod.do_not_run": "Do NOT run Sim-U-City",
+  "button.run_mod.normal": "Normal Mode",
+  "button.run_mod.creative": "Creative Mode",
+  "button.run_mod.difficult": "Difficult Mode",
   "button.city_box.done": "Done",
   "button.city_box.hire_builders": "Hire Builders",
   "button.city_box.choose_building": "Choose Building",
@@ -14,6 +18,13 @@
   "button.city_box.planning_area": "Planning Area",
   "button.city_box.show_employees": "Show Employees",
   "button.city_box.create_new_city": "Create New City",
+
+  "text.run_mod.title": "Sim-U-City Run Mod Menu",
+  "text.run_mod.do_not_run_description": "Off Sim-U-City for this world",
+  "text.run_mod.normal_description": "Suggest beginner to choose this",
+  "text.run_mod.creative_description": "Unlimited money, needn't blocks, fast build speed and so on",
+  "text.run_mod.difficult_description": "Need to provide ALL blocks (such as diamond blocks) , harder gameplay",
+  "text.city_box.city_control_panel": "City Box Control Panel",
 
   "text.week.sunday": "Sunday",
   "text.week.monday": "Monday",
