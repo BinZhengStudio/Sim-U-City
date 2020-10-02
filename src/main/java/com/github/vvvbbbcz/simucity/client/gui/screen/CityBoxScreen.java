@@ -20,32 +20,32 @@ public class CityBoxScreen extends Screen {
 	@Override
 	protected void init() {
 		this.buttons.clear();
-		this.addButton(new Button(2, 12, 50, 20, I18n.format("button.city_box.done"), (press) -> {
+		this.addButton(new Button(this.width / 16, this.height / 16, 50, 20, I18n.format("button.city_box.done"), (press) -> {
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
 		if (WorldData.state.getGamemode() != GameMode.NOT_ASKED && WorldData.state.getGamemode() != GameMode.DO_NOT_RUN) {
-			this.addButton(this.hire_builders = new Button(this.width / 2 - 180, 150, 120, 20, I18n.format("button.city_box.hire_builders"), (press) -> {
+			this.addButton(this.hire_builders = new Button(this.width / 2 - 184, this.height - (this.height / 4), 120, 20, I18n.format("button.city_box.hire_builders"), (press) -> {
 
 			}));
 
-			this.addButton(this.choose_building = new Button(this.width / 2 - 60, 150, 120, 20, I18n.format("button.city_box.choose_building"), (press) -> {
+			this.addButton(this.choose_building = new Button(this.width / 2 - 60, this.height - (this.height / 4), 120, 20, I18n.format("button.city_box.choose_building"), (press) -> {
 
 			}));
 
-			this.addButton(this.fire_builders = new Button(this.width / 2 + 60, 150, 120, 20, I18n.format("button.city_box.fire_builders"), (press) -> {
+			this.addButton(this.fire_builders = new Button(this.width / 2 + 64, this.height - (this.height / 4), 120, 20, I18n.format("button.city_box.fire_builders"), (press) -> {
 
 			}));
 
-			this.addButton(this.hire_planners = new Button((width / 2) - 180, 170, 120, 20, I18n.format("button.city_box.hire_planners"), (press) -> {
+			this.addButton(this.hire_planners = new Button((width / 2) - 184, this.height - (this.height / 4) -24, 120, 20, I18n.format("button.city_box.hire_planners"), (press) -> {
 
 			}));
 
-			this.addButton(this.planning_area = new Button(this.width / 2 - 60, 170, 120, 20, I18n.format("button.city_box.planning_area"), (press) -> {
+			this.addButton(this.planning_area = new Button(this.width / 2 - 60, this.height - (this.height / 4) -24, 120, 20, I18n.format("button.city_box.planning_area"), (press) -> {
 
 			}));
 
-			this.addButton(this.show_employees = new Button(this.width / 2 + 60, 170, 120, 20, I18n.format("button.city_box.show_employees"), (press) -> {
+			this.addButton(this.show_employees = new Button(this.width / 2 + 64, this.height - (this.height / 4) -24, 120, 20, I18n.format("button.city_box.show_employees"), (press) -> {
 
 			}));
 		} else {
@@ -58,7 +58,7 @@ public class CityBoxScreen extends Screen {
 	@Override
 	public void render(int p_render_1_, int p_render_2_, float p_render_3_) {
 		this.renderBackground();
-		this.drawCenteredString(this.font, I18n.format("text.city_box.city_control_panel"), width / 2, 17, 0xFFFFFF);
+		this.drawCenteredString(this.font, I18n.format("text.city_box.city_control_panel"), width / 2, 20, 0xFFFFFF);
 		super.render(p_render_1_, p_render_2_, p_render_3_);
 	}
 

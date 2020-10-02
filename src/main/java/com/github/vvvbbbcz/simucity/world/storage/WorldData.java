@@ -8,6 +8,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import java.io.*;
 
 public class WorldData implements Serializable {
+	private static final long serialVersionUID = 1145140011451400001L;
 	/**
 	 * the WorldState
 	 */

@@ -27,25 +27,25 @@ public class RunModScreen extends Screen {
 	public void init() {
 		Gson gson = new Gson();
 
-		this.addButton(new Button((width / 2 - 75), 40, 150, 20, I18n.format("button.run_mod.do_not_run"), (press) -> {
+		this.addButton(new Button((width / 2 - 75), this.height / 2 - 70, 150, 20, I18n.format("button.run_mod.do_not_run"), (press) -> {
 			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.DO_NOT_RUN, -1))));
 			WorldData.state = new WorldState(GameMode.DO_NOT_RUN, -1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
-		this.addButton(new Button((width / 2 - 75), 90, 150, 20, I18n.format("button.run_mod.normal"), (press) -> {
+		this.addButton(new Button((width / 2 - 75), this.height / 2 - 20, 150, 20, I18n.format("button.run_mod.normal"), (press) -> {
 			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.NORMAL, 1))));
 			WorldData.state = new WorldState(GameMode.NORMAL, 1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
-		this.addButton(new Button((width / 2 - 75), 140, 150, 20, I18n.format("button.run_mod.creative"), (press) -> {
+		this.addButton(new Button((width / 2 - 75), this.height / 2 + 30, 150, 20, I18n.format("button.run_mod.creative"), (press) -> {
 			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.CREATIVE, 1))));
 			WorldData.state = new WorldState(GameMode.CREATIVE, 1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
-		this.addButton(new Button((width / 2 - 75), 190, 150, 20, I18n.format("button.run_mod.difficult"), (press) -> {
+		this.addButton(new Button((width / 2 - 75), this.height / 2 + 80, 150, 20, I18n.format("button.run_mod.difficult"), (press) -> {
 			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.DIFFICULT, 1))));
 			WorldData.state = new WorldState(GameMode.DIFFICULT, 1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
@@ -57,10 +57,10 @@ public class RunModScreen extends Screen {
 		this.renderBackground();
 		RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.drawCenteredString(this.font, I18n.format("text.run_mod.title"), width / 2, 20, 0xffffff);
-		this.drawCenteredString(this.font, I18n.format("text.run_mod.do_not_run_description"), width / 2, 60, 0xffff00);
-		this.drawCenteredString(this.font, I18n.format("text.run_mod.normal_description"), width / 2, 110, 0xffff00);
-		this.drawCenteredString(this.font, I18n.format("text.run_mod.creative_description"), width / 2, 160, 0xffff00);
-		this.drawCenteredString(this.font, I18n.format("text.run_mod.difficult_description"), width / 2, 210, 0xffff00);
+		this.drawCenteredString(this.font, I18n.format("text.run_mod.do_not_run_description"), width / 2, this.height / 2 - 48, 0xffff00);
+		this.drawCenteredString(this.font, I18n.format("text.run_mod.normal_description"), width / 2, this.height / 2 + 2, 0xffff00);
+		this.drawCenteredString(this.font, I18n.format("text.run_mod.creative_description"), width / 2, this.height / 2 + 52, 0xffff00);
+		this.drawCenteredString(this.font, I18n.format("text.run_mod.difficult_description"), width / 2, this.height / 2 + 102, 0xffff00);
 		super.render(mouseX, mouseY, particleTick);
 	}
 
