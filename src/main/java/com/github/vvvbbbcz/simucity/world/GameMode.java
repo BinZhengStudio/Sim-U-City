@@ -1,25 +1,34 @@
 package com.github.vvvbbbcz.simucity.world;
 
 public enum GameMode {
-	NOT_ASKED(-1, "notAsked"),
-	NORMAL(0, "normal"),
-	CREATIVE(1, "creative"),
-	HARDCORE(2, "hardcore"),
-	DO_NOT_RUN(3, "do_not_run");
+	NOT_ASKED(-1),
+	NORMAL(0),
+	CREATIVE(1),
+	HARDCORE(2),
+	DO_NOT_RUN(3);
 
 	private final int id;
-	private final String name;
 
-	GameMode(int id, String name) {
+	GameMode(int id) {
 		this.id = id;
-		this.name = name;
 	}
 
 	public int getId() {
 		return this.id;
 	}
 
-	public String getName() {
-		return this.name;
+	public static GameMode getModeFromId(int id) {
+		if (id == -1) {
+			return NOT_ASKED;
+		} else if (id == 0) {
+			return NORMAL;
+		} else if (id == 1) {
+			return CREATIVE;
+		} else if (id == 2) {
+			return HARDCORE;
+		} else if (id == 3) {
+			return DO_NOT_RUN;
+		}
+		return NOT_ASKED;
 	}
 }

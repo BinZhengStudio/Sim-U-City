@@ -33,7 +33,7 @@ public class CityBoxBlock extends Block {
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
 		worldIn.playSound(player, pos, SUCSoundEvents.COMPUTER, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		if (FMLEnvironment.dist == Dist.CLIENT) {
-			ScreenHandler.openCityBoxScreen(player);
+			ScreenHandler.openCityBoxScreen();
 			return ActionResultType.SUCCESS;
 		}
 		return ActionResultType.CONSUME;

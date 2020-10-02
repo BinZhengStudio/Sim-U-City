@@ -1,42 +1,47 @@
 package com.github.vvvbbbcz.simucity.world.storage;
 
 import com.github.vvvbbbcz.simucity.SimUCity;
+import com.google.gson.Gson;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.List;
+import java.io.*;
 
-public class WorldData {
-	private static World world;
+public class WorldData implements Serializable {
+	/**
+	 * the WorldState
+	 */
+	public static WorldState state = new WorldState();
 
-	public static void setWorld(World worldIn) {
-		world = worldIn;
-	}
+	/**
+	 * the player's credits
+	 */
+	public static PlayerCredits playerCredits = new PlayerCredits();
 
-	public static <T> void saveData(String fileName, List<T> data) {
+	public static void loadData(World world) {
 		if (!world.isRemote) {
-			String worldName = world.getServer().getFolderName();
-			File worldPath;
-			if (FMLEnvironment.dist.isClient()) {
-				worldPath = world.getServer().getDataDirectory().toPath().resolve("saves").resolve(worldName).resolve(SimUCity.MODID).toFile();
-			} else {
-				worldPath = world.getServer().getDataDirectory().toPath().resolve(worldName).resolve(SimUCity.MODID).toFile();
-			}
-
-			if (!worldPath.exists()) {
-				worldPath.mkdirs();
-			}
-
-			File file = new File(worldPath, fileName);
+			File worldPath = getWorldFolder(world);
+			Gson gson = new Gson();
 
 			try {
-				BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-				for (T line : data) {
-					writer.write(line + "\r\n");
-				}
+				BufferedReader reader = new BufferedReader(new FileReader(new File(worldPath, "worldstate.json")));
+				WorldData.state = gson.fromJson(reader, WorldState.class);
+				reader.close();
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void saveData(World world) {
+		if (!world.isRemote) {
+			File worldPath = getWorldFolder(world);
+			Gson gson = new Gson();
+
+			try {
+				BufferedWriter writer = new BufferedWriter(new FileWriter(new File(worldPath, "worldstate.json")));
+				gson.toJson(state, writer);
 				writer.close();
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -44,6 +49,24 @@ public class WorldData {
 		}
 	}
 
-//	public static <T> ArrayList<T> loadData(String fileName, Class<? extends T> dataType) {
-//	}
+	/**
+	 * Get the folder of the world.<br>
+	 * Please add {@code if(!world.isRemote)} by yourself.
+	 * @param world
+	 * @return the world folder
+	 */
+	private static File getWorldFolder(World world) {
+		String worldName = world.getServer().getFolderName(); // get the world folder name
+		File worldPath;
+		if (FMLEnvironment.dist.isDedicatedServer()) {
+			worldPath = world.getServer().getDataDirectory().toPath().resolve(worldName).resolve(SimUCity.MODID).toFile();
+		} else {
+			worldPath = world.getServer().getDataDirectory().toPath().resolve("saves").resolve(worldName).resolve(SimUCity.MODID).toFile();
+		}
+
+		if (!worldPath.exists()) {
+			worldPath.mkdirs();
+		}
+		return worldPath;
+	}
 }

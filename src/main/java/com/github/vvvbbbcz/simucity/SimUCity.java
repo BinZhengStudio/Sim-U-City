@@ -9,10 +9,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(SimUCity.MODID)
 public class SimUCity {
 	public static final String MODID = "simucity";
+	public static final Logger LOGGER = LogManager.getLogger();
 
 	public SimUCity() {
 		SUCBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());

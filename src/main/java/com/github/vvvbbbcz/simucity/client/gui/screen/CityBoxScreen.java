@@ -1,33 +1,30 @@
 package com.github.vvvbbbcz.simucity.client.gui.screen;
 
+import com.github.vvvbbbcz.simucity.world.GameMode;
+import com.github.vvvbbbcz.simucity.world.storage.WorldData;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class CityBoxScreen extends Screen {
-	private boolean isSetup = false;
-	private PlayerEntity player;
-	private Button done, choose_building, hire_builders, fire_builders, planning_area, hire_planners, create_new_city, show_employees;
+	private Button choose_building, hire_builders, fire_builders, planning_area, hire_planners, create_new_city, show_employees;
 
-	public CityBoxScreen(PlayerEntity player) {
+	public CityBoxScreen() {
 		super(new StringTextComponent("city_box"));
-		this.player = player;
 	}
 
 	@Override
 	protected void init() {
 		this.buttons.clear();
-		this.addButton(this.done = new Button(2, 12, 50, 20, I18n.format("button.city_box.done"), (press) -> {
+		this.addButton(new Button(2, 12, 50, 20, I18n.format("button.city_box.done"), (press) -> {
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
-		if (isSetup) {
+		if (WorldData.state.getGamemode() != GameMode.NOT_ASKED && WorldData.state.getGamemode() != GameMode.DO_NOT_RUN) {
 			this.addButton(this.choose_building = new Button(this.width / 2 - 60, 150, 120, 20, I18n.format("button.city_box.choose_building"), (press) -> {
 
 			}));

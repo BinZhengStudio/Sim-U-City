@@ -1,3 +1,15 @@
 {
-  "itemGroup.simucity.sim_u_city": "Sim-U-City"
+  "itemGroup.simucity.sim_u_city": "Sim-U-City",
+
+  "text.week.sunday": "Sunday",
+  "text.week.monday": "Monday",
+  "text.week.tuesday": "Tuesday",
+  "text.week.wednesday": "Wednesday",
+  "text.week.thursday": "Thursday",
+  "text.week.friday": "Friday",
+  "text.week.saturday": "Saturday",
+
+  "text.hud.population": "Population: ",
+  "text.hud.credits": "Credits: ",
+  "text.hud.loading": "Loading Data..."
 }

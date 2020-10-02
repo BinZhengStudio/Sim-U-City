@@ -1,3 +1,15 @@
 {
-  "itemGroup.simucity.sim_u_city": "模拟大都市"
+  "itemGroup.simucity.sim_u_city": "模拟大都市",
+
+  "text.week.sunday": "星期日",
+  "text.week.monday": "星期一",
+  "text.week.tuesday": "星期二",
+  "text.week.wednesday": "星期三",
+  "text.week.thursday": "星期四",
+  "text.week.friday": "星期五",
+  "text.week.saturday": "星期六",
+
+  "text.hud.population": "人口：",
+  "text.hud.credits": "资金：",
+  "text.hud.loading": "读取数据中。。。"
 }

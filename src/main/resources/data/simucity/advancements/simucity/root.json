@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "simucity:city_box"
+    },
+    "title": {
+      "translate": "advancement.simucity.root.title"
+    },
+    "description": {
+      "translate": "advancement.simucity.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ]
+}

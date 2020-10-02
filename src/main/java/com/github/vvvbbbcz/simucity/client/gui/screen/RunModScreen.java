@@ -1,9 +1,11 @@
 package com.github.vvvbbbcz.simucity.client.gui.screen;
 
-import com.github.vvvbbbcz.simucity.network.GameModePack;
+import com.github.vvvbbbcz.simucity.network.WorldStatePack;
 import com.github.vvvbbbcz.simucity.network.Networking;
 import com.github.vvvbbbcz.simucity.world.GameMode;
+import com.github.vvvbbbcz.simucity.world.storage.WorldData;
 import com.github.vvvbbbcz.simucity.world.storage.WorldState;
+import com.google.gson.Gson;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
@@ -23,23 +25,29 @@ public class RunModScreen extends Screen {
 
 	@Override
 	public void init() {
+		Gson gson = new Gson();
+
 		this.addButton(new Button((width / 2 - 75), 40, 150, 20, I18n.format("button.run_mod.do_not_run"), (press) -> {
-			Networking.GAME_MODE.sendToServer(new GameModePack(GameMode.DO_NOT_RUN));
+			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.DO_NOT_RUN, -1))));
+			WorldData.state = new WorldState(GameMode.DO_NOT_RUN, -1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
 		this.addButton(new Button((width / 2 - 75), 90, 150, 20, I18n.format("button.run_mod.normal"), (press) -> {
-			Networking.GAME_MODE.sendToServer(new GameModePack(GameMode.NORMAL));
+			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.NORMAL, 1))));
+			WorldData.state = new WorldState(GameMode.NORMAL, 1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
 		this.addButton(new Button((width / 2 - 75), 140, 150, 20, I18n.format("button.run_mod.creative"), (press) -> {
-			Networking.GAME_MODE.sendToServer(new GameModePack(GameMode.CREATIVE));
+			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.CREATIVE, 1))));
+			WorldData.state = new WorldState(GameMode.CREATIVE, 1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 
 		this.addButton(new Button((width / 2 - 75), 190, 150, 20, I18n.format("button.run_mod.hardcore"), (press) -> {
-			Networking.GAME_MODE.sendToServer(new GameModePack(GameMode.HARDCORE));
+			Networking.WORLD_STATE.sendToServer(new WorldStatePack(gson.toJson(new WorldState(GameMode.HARDCORE, 1))));
+			WorldData.state = new WorldState(GameMode.HARDCORE, 1);
 			this.getMinecraft().displayGuiScreen((Screen) null);
 		}));
 	}
