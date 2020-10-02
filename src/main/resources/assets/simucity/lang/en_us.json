@@ -1,6 +1,20 @@
 {
   "itemGroup.simucity.sim_u_city": "Sim-U-City",
 
+  "advancement.simucity.root.title": "城市之魂",
+  "advancement.simucity.root.description": "建筑盒，城市之魂！",
+
+  "block.simucity.city_box": "City Box",
+
+  "button.city_box.done": "Done",
+  "button.city_box.hire_builders": "Hire Builders",
+  "button.city_box.choose_building": "Choose Building",
+  "button.city_box.fire_builders": "Fire Builders",
+  "button.city_box.hire_planners": "Hire Planners",
+  "button.city_box.planning_area": "Planning Area",
+  "button.city_box.show_employees": "Show Employees",
+  "button.city_box.create_new_city": "Create New City",
+
   "text.week.sunday": "Sunday",
   "text.week.monday": "Monday",
   "text.week.tuesday": "Tuesday",

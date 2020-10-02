@@ -10,19 +10,26 @@
       "translate": "advancement.simucity.root.description"
     },
     "frame": "task",
-    "show_toast": false,
+    "show_toast": true,
     "announce_to_chat": true,
     "hidden": false,
     "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
   },
   "criteria": {
-    "tick": {
-      "trigger": "minecraft:tick"
+    "city_box": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "simucity:city_box"
+          }
+        ]
+      }
     }
   },
   "requirements": [
     [
-      "tick"
+      "city_box"
     ]
   ]
 }

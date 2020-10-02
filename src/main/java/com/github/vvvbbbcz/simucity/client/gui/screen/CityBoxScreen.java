@@ -25,11 +25,11 @@ public class CityBoxScreen extends Screen {
 		}));
 
 		if (WorldData.state.getGamemode() != GameMode.NOT_ASKED && WorldData.state.getGamemode() != GameMode.DO_NOT_RUN) {
-			this.addButton(this.choose_building = new Button(this.width / 2 - 60, 150, 120, 20, I18n.format("button.city_box.choose_building"), (press) -> {
+			this.addButton(this.hire_builders = new Button(this.width / 2 - 180, 150, 120, 20, I18n.format("button.city_box.hire_builders"), (press) -> {
 
 			}));
 
-			this.addButton(this.hire_builders = new Button(this.width / 2 - 180, 150, 120, 20, I18n.format("button.city_box.hire_builders"), (press) -> {
+			this.addButton(this.choose_building = new Button(this.width / 2 - 60, 150, 120, 20, I18n.format("button.city_box.choose_building"), (press) -> {
 
 			}));
 
@@ -37,11 +37,11 @@ public class CityBoxScreen extends Screen {
 
 			}));
 
-			this.addButton(this.planning_area = new Button(this.width / 2 - 60, 170, 120, 20, I18n.format("button.city_box.planning_area"), (press) -> {
+			this.addButton(this.hire_planners = new Button((width / 2) - 180, 170, 120, 20, I18n.format("button.city_box.hire_planners"), (press) -> {
 
 			}));
 
-			this.addButton(this.hire_planners = new Button((width / 2) - 180, 170, 120, 20, I18n.format("button.city_box.hire_planners"), (press) -> {
+			this.addButton(this.planning_area = new Button(this.width / 2 - 60, 170, 120, 20, I18n.format("button.city_box.planning_area"), (press) -> {
 
 			}));
 

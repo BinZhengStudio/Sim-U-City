@@ -1,6 +1,20 @@
 {
   "itemGroup.simucity.sim_u_city": "模拟大都市",
 
+  "advancement.simucity.root.title": "城市之魂",
+  "advancement.simucity.root.description": "建筑盒，城市之魂！",
+
+  "block.simucity.city_box": "城市建筑盒",
+
+  "button.city_box.done": "确定",
+  "button.city_box.hire_builders": "雇佣建筑师",
+  "button.city_box.choose_building": "选择建筑",
+  "button.city_box.fire_builders": "解雇建筑师",
+  "button.city_box.hire_planners": "雇佣规划师",
+  "button.city_box.planning_area": "区域规划选项",
+  "button.city_box.show_employees": "显示员工",
+  "button.city_box.create_new_city": "创建新的城市",
+
   "text.week.sunday": "星期日",
   "text.week.monday": "星期一",
   "text.week.tuesday": "星期二",
