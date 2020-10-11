@@ -1,6 +1,7 @@
 package com.github.vvvbbbcz.simucity;
 
 import com.github.vvvbbbcz.simucity.block.SUCBlocks;
+import com.github.vvvbbbcz.simucity.entity.SUCEntityType;
 import com.github.vvvbbbcz.simucity.item.SUCItems;
 import com.github.vvvbbbcz.simucity.network.Networking;
 import net.minecraftforge.common.MinecraftForge;
@@ -20,6 +21,7 @@ public class SimUCity {
 	public SimUCity() {
 		SUCBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 		SUCItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+		SUCEntityType.ENTITY_TYPE.register(FMLJavaModLoadingContext.get().getModEventBus());
 
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);

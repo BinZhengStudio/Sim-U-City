@@ -17,6 +17,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class Building implements Serializable {
+	/*
 	private static final long serialVersionUID = 1145140011451400002L;
 	public String displayName;
 	public String type; // / residential commercial (folder name)
@@ -345,4 +346,6 @@ public class Building implements Serializable {
 //			return height;
 //		}
 //	}
+
+	 */
 }
