@@ -1,4 +1,4 @@
-package com.github.vvvbbbcz.simucity.client.gui.screen;
+package com.github.vvvbbbcz.simucity.client.gui.screen.citybox;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;

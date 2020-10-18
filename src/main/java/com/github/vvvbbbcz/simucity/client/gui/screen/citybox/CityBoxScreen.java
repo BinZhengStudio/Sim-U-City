@@ -1,7 +1,9 @@
-package com.github.vvvbbbcz.simucity.client.gui.screen;
+package com.github.vvvbbbcz.simucity.client.gui.screen.citybox;
 
+import com.github.vvvbbbcz.simucity.client.gui.screen.RunModScreen;
 import com.github.vvvbbbcz.simucity.world.GameMode;
 import com.github.vvvbbbcz.simucity.world.storage.WorldData;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.resources.I18n;
@@ -30,7 +32,7 @@ public class CityBoxScreen extends Screen {
 			}));
 
 			this.addButton(this.choose_building = new Button(this.width / 2 - 60, this.height - (this.height / 4), 120, 20, I18n.format("button.city_box.choose_building"), (press) -> {
-
+				Minecraft.getInstance().displayGuiScreen(new SelectBuildingScreen());
 			}));
 
 			this.addButton(this.fire_builders = new Button(this.width / 2 + 64, this.height - (this.height / 4), 120, 20, I18n.format("button.city_box.fire_builders"), (press) -> {

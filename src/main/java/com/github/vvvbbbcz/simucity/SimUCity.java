@@ -4,6 +4,8 @@ import com.github.vvvbbbcz.simucity.block.SUCBlocks;
 import com.github.vvvbbbcz.simucity.entity.SUCEntityType;
 import com.github.vvvbbbcz.simucity.item.SUCItems;
 import com.github.vvvbbbcz.simucity.network.Networking;
+import com.github.vvvbbbcz.simucity.world.building.Building;
+import com.github.vvvbbbcz.simucity.world.building.Reader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -32,6 +34,7 @@ public class SimUCity {
 
 	private void setup(final FMLCommonSetupEvent event) {
 		Networking.register();
+		Reader.readAll();
 	}
 
 	private void doClientStuff(final FMLClientSetupEvent event) {

@@ -1,9 +1,8 @@
 package com.github.vvvbbbcz.simucity.world.storage;
 
-import com.github.vvvbbbcz.simucity.SimUCity;
+import com.github.vvvbbbcz.simucity.util.FileUtil;
 import com.google.gson.Gson;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 
 import java.io.*;
 
@@ -21,7 +20,7 @@ public class WorldData implements Serializable {
 
 	public static void loadData(World world) {
 		if (!world.isRemote) {
-			File worldPath = getWorldFolder(world);
+			File worldPath = FileUtil.getWorldFolder(world);
 			Gson gson = new Gson();
 
 			try {
@@ -37,7 +36,7 @@ public class WorldData implements Serializable {
 
 	public static void saveData(World world) {
 		if (!world.isRemote) {
-			File worldPath = getWorldFolder(world);
+			File worldPath = FileUtil.getWorldFolder(world);
 			Gson gson = new Gson();
 
 			try {
@@ -48,26 +47,5 @@ public class WorldData implements Serializable {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	/**
-	 * Get the folder of the world.<br>
-	 * Please add {@code if(!world.isRemote)} by yourself.
-	 * @param world
-	 * @return the world folder
-	 */
-	private static File getWorldFolder(World world) {
-		String worldName = world.getServer().getFolderName(); // get the world folder name
-		File worldPath;
-		if (FMLEnvironment.dist.isDedicatedServer()) {
-			worldPath = world.getServer().getDataDirectory().toPath().resolve(worldName).resolve(SimUCity.MODID).toFile();
-		} else {
-			worldPath = world.getServer().getDataDirectory().toPath().resolve("saves").resolve(worldName).resolve(SimUCity.MODID).toFile();
-		}
-
-		if (!worldPath.exists()) {
-			worldPath.mkdirs();
-		}
-		return worldPath;
 	}
 }

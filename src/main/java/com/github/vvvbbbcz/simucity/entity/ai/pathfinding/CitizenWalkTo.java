@@ -6,7 +6,6 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
